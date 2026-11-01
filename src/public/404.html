@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
+  <script>
+    var pathSegmentsToKeep = 1;
+
+    var l = window.location;
+    var path = l.pathname
+      .split("/")
+      .slice(0, 1 + pathSegmentsToKeep)
+      .join("/");
+
+    var route = l.pathname.slice(path.length);
+
+    var redirect = path + "/?/" + route.replace(/^\//, "");
+
+    window.location.replace(
+      l.origin + redirect + l.search + l.hash
+    );
+  </script>
+</head>
+<body>
+  Redirecting...
+</body>
+</html>
