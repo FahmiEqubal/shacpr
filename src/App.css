@@ -1,0 +1,306 @@
+
+/* =====================================
+   GLOBAL STYLES
+===================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  color: #082e34;
+  background: #fff;
+}
+
+/* =====================================
+   NAVIGATION
+===================================== */
+
+.app-nav {
+  padding: 15px 7%;
+  display: flex;
+  gap: 25px;
+  border-bottom: 1px solid #ddd;
+}
+
+.app-nav a {
+  color: #083c48;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* =====================================
+   CERTIFICATE PAGE
+===================================== */
+
+.certificate-page {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+
+.certificate-header {
+  height: 85px;
+  flex-shrink: 0;
+  padding: 10px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.certificate-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: bold;
+  color: #18385d;
+}
+
+.certificate-logo small {
+  display: block;
+  margin-top: 3px;
+}
+
+.menu-icon {
+  font-size: 32px;
+  color: #000;
+}
+
+/* Verification Heading */
+
+.verification-heading {
+  text-align: center;
+  font-size: clamp(28px, 4vw, 40px);
+  color: #082e34;
+  margin: 40px 20px 60px;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+/* Certificate Details Card */
+
+.certificate-card {
+  width: 84%;
+  max-width: 1100px;
+  margin: 10px auto 20px;
+  padding: 22px;
+  background: #fff;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.20);
+  border-radius: 2px;
+}
+
+.certificate-card h2 {
+  font-size: clamp(30px, 5vw, 56px);
+  color: #082e34;
+  margin: 0 0 15px;
+}
+
+.certificate-card hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 0 0 12px;
+}
+
+/* Certificate Information */
+
+.certificate-info {
+  padding: 0;
+  margin: 0;
+}
+
+.certificate-info p {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 0;
+  padding: 11px 0;
+  font-size: 15px;
+  color: #777;
+  text-align: left;
+}
+
+.certificate-info strong {
+  font-weight: 700;
+}
+
+.certificate-info span {
+  font-weight: 400;
+}
+
+/* =====================================
+   QR GENERATOR PAGE
+===================================== */
+
+.generator-page {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.generator-page h1 {
+  font-size: 35px;
+}
+
+.generator-page input {
+  display: block;
+  width: 90%;
+  max-width: 550px;
+  margin: 30px auto;
+  padding: 15px;
+  border: 1px solid #bbb;
+  border-radius: 7px;
+  font-size: 16px;
+}
+
+.qr-container {
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.qr-container canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+.generated-url {
+  max-width: 550px;
+  overflow-wrap: anywhere;
+  color: #777;
+}
+
+
+/* Multiple QR Cards */
+
+.qr-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.qr-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 25px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+
+.qr-card h3 {
+  margin: 0;
+  color: #083c48;
+}
+
+.qr-card p {
+  margin: 0;
+}
+
+.qr-card canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+.qr-card .generated-url {
+  font-size: 12px;
+  overflow-wrap: anywhere;
+  text-align: center;
+}
+
+
+/* Buttons */
+
+button {
+  background: #083c48;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  padding: 14px 25px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background: #105563;
+}
+
+/* =====================================
+   MOBILE RESPONSIVE
+===================================== */
+
+@media (max-width: 600px) {
+
+  /* Header */
+
+  .certificate-header {
+    height: 75px;
+    padding: 10px 20px;
+  }
+
+  .certificate-logo {
+    font-size: 11px;
+  }
+
+  .menu-icon {
+    font-size: 30px;
+  }
+
+  /* Heading */
+
+  .verification-heading {
+    font-size: 30px;
+    margin: 5px 10px 12px;
+  }
+
+  /* Certificate Card */
+
+  .certificate-card {
+    width: 92%;
+    margin: 8px auto 15px;
+    padding: 18px;
+  }
+
+  .certificate-card h2 {
+    font-size: 32px;
+  }
+
+  /* Details */
+
+  .certificate-info p {
+    font-size: 14px;
+    padding: 10px 0;
+  }
+
+  /* QR Generator */
+
+  .generator-page {
+    padding: 35px 15px;
+  }
+
+  .generator-page h1 {
+    font-size: 28px;
+  }
+
+  .generator-page input {
+    width: 100%;
+  }
+
+}
