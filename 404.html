@@ -2,24 +2,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <title>Redirecting...</title>
   <script>
-    var pathSegmentsToKeep = 1;
+    var path = window.location.pathname;
 
-    var l = window.location;
-    var path = l.pathname
-      .split("/")
-      .slice(0, 1 + pathSegmentsToKeep)
-      .join("/");
+    var base = "/shacpr";
 
-    var route = l.pathname.slice(path.length);
+    var route = path.startsWith(base)
+      ? path.slice(base.length)
+      : path;
 
-    var redirect = path + "/?/" + route.replace(/^\//, "");
-
-    window.location.replace(
-      l.origin + redirect + l.search + l.hash
+    sessionStorage.setItem(
+      "redirect",
+      route + window.location.search + window.location.hash
     );
+
+    window.location.replace(base + "/");
   </script>
 </head>
 <body>
